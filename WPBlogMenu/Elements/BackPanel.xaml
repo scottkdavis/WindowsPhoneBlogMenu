@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WPBlogMenu.BackPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="310" d:DesignWidth="165" Foreground="White">
+
+    <Grid x:Name="LayoutRoot" Background="Black" Height="310" Width="165" >
+        <StackPanel Margin="3">
+            <TextBlock Text="WP7 Blog Menu" FontWeight="Bold" FontSize="18" />
+            <TextBlock Text="This Silverlight Control was created by Scott K Davis. This control is an open source project on CodePlex. Obtain the code for this CodePlex project at" Margin="0,10,0,0" TextWrapping="Wrap" />
+            <HyperlinkButton TargetName="_blank" NavigateUri="http://WPBlogMenu.Codeplex.com" Content="WPBlogMenu" HorizontalAlignment="Center"  Margin="0,10" />
+            <TextBlock Text="Make your own Windows Phone menu or contribute to the open source project." TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</UserControl>

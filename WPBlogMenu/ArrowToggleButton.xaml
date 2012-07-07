@@ -1,0 +1,53 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Style x:Key="ArrowButton" TargetType="ToggleButton">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ToggleButton">
+					<Grid x:Name="MenuArrow" >
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CheckStates">
+								<VisualStateGroup.Transitions>
+									<VisualTransition GeneratedDuration="0:0:0.75">
+										<VisualTransition.GeneratedEasingFunction>
+											<CircleEase EasingMode="EaseOut"/>
+										</VisualTransition.GeneratedEasingFunction>
+									</VisualTransition>
+								</VisualStateGroup.Transitions>
+								<VisualState x:Name="Checked">
+									<Storyboard>
+										<DoubleAnimation Duration="0" To="-180" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Unchecked"/>
+								<VisualState x:Name="Indeterminate"/>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualStateGroup.Transitions>
+									<VisualTransition GeneratedDuration="0:0:0.75">
+										<VisualTransition.GeneratedEasingFunction>
+											<CircleEase EasingMode="EaseOut"/>
+										</VisualTransition.GeneratedEasingFunction>
+									</VisualTransition>
+								</VisualStateGroup.Transitions>
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="MouseOver"/>
+								<VisualState x:Name="Pressed"/>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+                        <Rectangle Fill="Black" Opacity="0" /> <!--This is to capture click events inside the transparent parts -->
+                        <Ellipse Margin="1,1,1,1" Stroke="White"/>
+ 						<Path x:Name="path" Data="M8.75,6.9375 L11.1875,6.9375 L15.061206,10.311996 L11.312178,14.063044 L8.6875076,13.875999 L11.31228,11.437972 L5.1887255,11.375458 L5.1887255,9.5625648 L11.31228,9.4375381 z" Margin="4.688,6.438,4.438,5.438" Stretch="Fill" UseLayoutRounding="False" StrokeThickness="0.3" Width="10.8739995956421" Fill="White" RenderTransformOrigin="0.5,0.5">
+							<Path.RenderTransform>
+								<CompositeTransform/>
+							</Path.RenderTransform>
+						</Path>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

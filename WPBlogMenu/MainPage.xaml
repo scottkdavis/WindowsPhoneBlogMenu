@@ -1,0 +1,99 @@
+﻿<UserControl xmlns:my="clr-namespace:WPBlogMenu" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"  x:Class="WPBlogMenu.MainPage"
+    d:DesignHeight="470" d:DesignWidth="250" mc:Ignorable="d">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="BrownTileColor" Color="#FFA05000"/>
+        <Style x:Key="TileButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource BrownTileColor}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="470" Width="250">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="SlideGroup">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0:0:0.75">
+                        <VisualTransition.GeneratedEasingFunction>
+                            <CircleEase EasingMode="EaseOut"/>
+                        </VisualTransition.GeneratedEasingFunction>
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Front">
+            		<Storyboard>
+                		<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="slideGrid" d:IsOptimized="True"/>
+                	</Storyboard>
+            	</VisualState>
+                <VisualState x:Name="Back">
+                    <Storyboard>
+                		<DoubleAnimation Duration="0" To="-170" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="slideGrid" d:IsOptimized="True"/>
+                	</Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Image Source="images/WP7.png" Stretch="Uniform"/>
+        <Rectangle Margin="21,37,21,85"/>
+        <Grid Clip="M21,37 L229,37 L229,385 L21,385 z" Background="Black">
+            <Grid x:Name="slideGrid" Width="416" Margin="21,56,-187,85" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <CompositeTransform/>
+                </Grid.RenderTransform>
+                <Grid x:Name="Tiles" Height="310" Width="165" Margin="10,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <my:PersonTile Cursor="Hand" Margin="3" Grid.Row="0" Grid.Column="0" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="0" TileImage="images/QonqrTeam.png" TileFrontTextLine1="QONQR" TileFrontTextLine2="Team" ClickURL="http://www.QONQR.com" />
+                    <my:PersonTileWithFlip Cursor="Hand" Margin="3" Grid.Row="2" Grid.Column="1" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="1" TileImage="images/Me.jpg" TileFrontTextLine2="Me" TileBackText="I setup my new blog and added a WP7 menu for navigation" FontSize="10" ClickURL="http://www.scottkdavis.com" />
+                    <my:PersonTile Cursor="Hand" Margin="3" Grid.Row="1" Grid.Column="1" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="5" TileImage="images/Tim.png" TileFrontTextLine1="Tim" TileFrontTextLine2="Heuer" ClickURL="http://timheuer.com" />
+                    <my:PersonTile Cursor="Hand" Margin="3" Grid.Row="2" Grid.Column="0" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="3" TileImage="images/John.jpg" TileFrontTextLine1="John" TileFrontTextLine2="Papa" ClickURL="http://johnpapa.net/" />
+                    <my:PersonTile Cursor="Hand" Margin="3" Grid.Row="3" Grid.Column="1" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="2" TileImage="images/redshirt.jpg" TileFrontTextLine1="Scott" TileFrontTextLine2="Guthrie" ClickURL="http://weblogs.asp.net/scottgu/" />
+                    <my:PersonTile Cursor="Hand" Margin="3" Grid.Row="3" Grid.Column="0" TileColor="{StaticResource BrownTileColor}" DelaySlideStartBySeconds="4" TileImage="images/hanselman.jpg" TileFrontTextLine1="Scott" TileFrontTextLine2="Hanselman" ClickURL="http://www.hanselman.com/" />
+
+
+                    <!--<Button x:Name="SLTV" Cursor="Hand" Grid.Row="3" Grid.Column="0" Height="75" Width="75" Margin="3" Style="{StaticResource TileButton}" Background="Black" Click="SLTV_Click">
+                        <Image Height="75" Source="images/SLTV.jpg" Stretch="Fill" Width="75"/>
+                    </Button>-->
+
+                    <Button x:Name="twitter" Cursor="Hand" Height="75" Grid.Row="1" Style="{StaticResource TileButton}" Width="75" Click="twitter_Click">
+                        <Grid>
+                            <my:Twitter Margin="0,-5,0,5"/>
+                            <TextBlock Text="twitter" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White" Margin="5,0,0,0" />
+                        </Grid>
+                    </Button>
+                    <Button x:Name="TCSLUG" Cursor="Hand" Grid.Row="0" Grid.Column="1" Height="75" Width="75" Margin="3" Style="{StaticResource TileButton}" Background="Black" Click="TCSLUG_Click">
+                        <Image Height="75" Source="images/sluggy.png" Stretch="Fill" Width="75"/>
+                    </Button>
+                </Grid>
+                <ToggleButton Cursor="Hand" Content="ToggleButton" HorizontalAlignment="Left" Height="20" Margin="178,20,0,0" Style="{StaticResource ArrowButton}" VerticalAlignment="Top" Width="20">
+                	<i:Interaction.Triggers>
+                		<i:EventTrigger EventName="Checked">
+                			<ei:GoToStateAction StateName="Back"/>
+                		</i:EventTrigger>
+                		<i:EventTrigger EventName="Unchecked">
+                			<ei:GoToStateAction StateName="Front"/>
+                		</i:EventTrigger>
+                	</i:Interaction.Triggers>
+                </ToggleButton>
+                <Grid Height="310" Width="165" Margin="210,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"  Background="Black">
+                    <my:BackPanel />
+                </Grid>
+            </Grid>
+        </Grid>
+        <my:Toast TileColor="{StaticResource BrownTileColor}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="21,37,0,0" Width="208" ToastLabel="Tip:  " ToastText="This is a menu. Tap the tiles." TipIconVisiblility="Visible" FontSize="9" />
+        <TextBlock Text="{Binding TheTime}" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White" Margin="0,38,24,0" FontSize="8" />
+    </Grid>
+</UserControl>

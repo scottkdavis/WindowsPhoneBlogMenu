@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPBlogMenu", "WPBlogMenu\WPBlogMenu.csproj", "{A56E0858-FDA8-4EBF-8975-A2AB7F801506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPBlogMenu.Web", "WPBlogMenu.Web\WPBlogMenu.Web.csproj", "{24FF1F52-B717-4981-94FF-3CE6928BE713}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A56E0858-FDA8-4EBF-8975-A2AB7F801506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56E0858-FDA8-4EBF-8975-A2AB7F801506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56E0858-FDA8-4EBF-8975-A2AB7F801506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56E0858-FDA8-4EBF-8975-A2AB7F801506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FF1F52-B717-4981-94FF-3CE6928BE713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FF1F52-B717-4981-94FF-3CE6928BE713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FF1F52-B717-4981-94FF-3CE6928BE713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FF1F52-B717-4981-94FF-3CE6928BE713}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
